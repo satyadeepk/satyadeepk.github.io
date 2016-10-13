@@ -7,4 +7,4 @@ tagline: A log of everyday life
 description: My awesome new site
 paginate: 5
 permalink: /:year/:month/:title/
-includes: ["_pages"]
+include: ["_pages"]

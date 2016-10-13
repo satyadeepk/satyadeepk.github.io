@@ -3,8 +3,8 @@ pygments: true
 markdown: kramdown
 url: http://satyadeepk.github.io
 title: Satyadeep K
-tagline: A log of everyday life
-description: My awesome new site
+tagline: My passions, Tech and Photography
+description: My passions, Tech and Photography
 paginate: 5
 permalink: /:year/:month/:title/
 include: ["_pages"]

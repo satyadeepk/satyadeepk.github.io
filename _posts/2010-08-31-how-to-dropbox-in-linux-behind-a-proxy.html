@@ -1,0 +1,54 @@
+---
+layout: post
+title: How to install Dropbox in Linux behind a proxy
+date: 2010-08-31 01:19:46.000000000 +05:30
+type: post
+published: true
+status: publish
+categories:
+- Tech Bytes
+- Ubuntu
+tags:
+- dropbox
+- GNU/Linux
+- proxy
+- stuff
+- Ubuntu
+meta:
+  _edit_last: '1'
+  _syntaxhighlighter_encoded: '1'
+  aktt_notify_twitter: 'yes'
+  _wp_old_slug: installing-dropbox-in-linux
+  dsq_thread_id: '480617863'
+  _thumbnail_id: '658'
+  image: ''
+  seo_follow: 'false'
+  seo_noindex: 'false'
+  dsq_needs_sync: '1'
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+---
+<div>
+<p>If you do not know what <a href="https://dropbox.com/tour" target="_blank">Dropbox</a> is,  it is a popular cross-platform file synchronization and backup application. It syncs the Dropbox folder present in your computer to the cloud by integrating itself with the file manager of the operating system.</p>
+<p>In case of Ubuntu, it depends upon the default file manager called "nautilus" of the GNOME Desktop to provide the user interface like showing the overlay icons over the files. The following are the steps to install Dropbox, if you are behind a proxy or a firewall.</p>
+<ol>
+</ol>
+<ol>
+<li>Download the nautilus-dropbox package from dropbox website <a href="https://www.dropbox.com/downloading?os=lnx">https://www.dropbox.com/downloading?os=lnx</a> . When you install it, it first installs the dropbox plugin for nautilus and then tries to fetch the Dropbox daemon from the internet. But if you are a behind a proxy, this connection fails and reports an error.</li>
+<li>Hence download the actual Dropbox daemon manually using these links 32 Bit (<a href="http://www.dropbox.com/download/?plat=lnx.x86">x86</a>),  64 Bit( <a href="http://www.dropbox.com/download/?plat=lnx.x86_64">x86_64</a> ). If you do not know which one your system is , check your kernel type with "uname -m" in terminal, it'll say "x86_64" if it's a 64 bit kernel.</li>
+<li>Place the .tar.gz file in your home directory.</li>
+</ol>
+<p>Change to your home directory /home/satyadeep for example and Run the following in terminal to extract the archive:</p>
+<p>[bash] tar xzf dropbox* [/bash]</p>
+<p>This will create a hidden directory called .dropbox-dist in your home folder.</p>
+<ol>
+<li>Start Dropbox by executing the following command.<br />
+[bash] ~/.dropbox-dist/dropboxd[/bash]</li>
+</ol>
+<p>In case, if there is a newer version available, or you want to try out a testing build from the <a href="https://forums.dropbox.com" target="_blank">Dropbox forums</a>, simply extract the latest .tar.gz file into your home folder as above (Step 3) and restart the dropbox daemon. That will upgrade you to the latest version.</p>
+<p>Source : <a href="http://wiki.dropbox.com/TipsAndTricks/TextBasedLinuxInstall">Dropbox Wiki</a></p>
+</div>

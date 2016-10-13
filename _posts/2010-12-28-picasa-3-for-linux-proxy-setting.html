@@ -1,0 +1,36 @@
+---
+layout: post
+title: 'Picasa 3 for Linux: Proxy setting'
+date: 2010-12-28 20:36:48.000000000 +05:30
+type: post
+published: true
+status: publish
+categories:
+- Tech Bytes
+- Ubuntu
+tags:
+- GNU/Linux
+- google
+- picasa
+- proxy
+- Ubuntu
+meta:
+  _wp_old_slug: ''
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '1'
+  dsq_thread_id: '477794949'
+  _thumbnail_id: '841'
+  dsq_needs_sync: '1'
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+---
+<p><a href="http://picasa.google.com"><img class="alignright" title="Picasa" src="{{ site.baseurl }}/assets/picasa_logo.gif" alt="Picasa Logo" width="124" height="40" /></a>Its been a long time since Google upgraded Picasa for Linux from 2.7 to 3.0 adding new features like 'Sync to Web', retouching images etc. Even though it is tagged beta it is quite stable with some minor issues though. It is actually ported through <a title="Wine home page" href="http://www.winehq.org/" target="_blank">Wine</a> directly.</p>
+<p>Uploading to Web albums is one major reason why I love Picasa. But the current version has issue of connecting to web albums through a proxy giving an error like "<span>Check your internet connection</span>". Going through the FAQ <a title="Picasa for Linux FAQ" href="http://picasa.google.com/linux/faq.html#31" target="_blank">http://picasa.google.com/linux/faq.html#31</a>gives a solution to this.</p>
+<p>Run</p>
+<p>[shell light="true"] /opt/google/picasa/3.0/bin/wrapper regedit[/shell]</p>
+<p>in terminal to start Picasa's regedit.<br />
+Then the proxy settings can be changed by following the instructions given for tweaking windows in general at <a href="http://www.pctools.com/guides/registry/detail/292/" target="_blank">http://www.pctools.com/guides/registry/detail/292/</a> .</p>

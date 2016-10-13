@@ -1,0 +1,53 @@
+---
+layout: post
+title: Error installing ESC/Java on JDK 1.6
+date: 2010-08-31 16:35:36.000000000 +05:30
+type: post
+published: true
+status: publish
+categories:
+- Programming
+- Tech Bytes
+tags:
+- esc/java
+- GNU/Linux
+- java
+- Ubuntu
+meta:
+  _edit_last: '1'
+  _syntaxhighlighter_encoded: '1'
+  _wp_old_slug: howto-error-using-escjava-on-jdk-1-6-0
+  dsq_thread_id: '477781326'
+  dsq_needs_sync: '1'
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+---
+<p>I and some of my friends encountered the following error when I tried <a title="ESC Java Home Page" href="http://secure.ucd.ie/products/opensource/ESCJava2/" target="_blank">ESC/JAVA 2</a> on open-jdk 1.6 in Ubuntu. Using Sun JDK 1.6 also caused the same error.</p>
+<p>[bash]/usr/java/jre1.6.0_18/lib/rt.jar:java/io/PrintStream.class:  Error: Different or incompatible return types on overridden(hidden) and  overriding(hiding) methods[/bash]</p>
+<p>One solution which worked for me is install Sun JDK 1.5  as given below and use it for ESC/JAVA. This is because ESC/JAVA 2 uses JML specification of JDK 1.4. Hence it  may cause trouble in case of higher versions of JDK. (<strong>See </strong><a href="http://old.nabble.com/Re%3A-C%3A%5CProgram-Files%5CJava%5Cjdk1.6.0_07%5Cjre%5Clib%5Crt.jar%3Ajava-io-PrintStream.class%3A%09Error%3A-p20378365.html" target="_blank">Issues of ESC/JAVA 2 with JDK 1.6 </a> ).</p>
+<p><strong>Steps to install Sun JDK 1.5 in Linux:</strong></p>
+<p>Note that any previous installation of JDK 1.6 may be left as it is.</p>
+<p>1) Download JDK 1.5 for Linux from <a title="Sun JDK website" href="https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=jdk-1.5.0_22-oth-JPR@CDS-CDS_Developer" target="_blank">here</a> or <a href="http://dl.dropbox.com/u/5529948/softwares/LINUX/jdk-1_5_0_22-linux-i586.bin?dl" target="_blank">Direct Link</a> .</p>
+<p>2) Change to the directory where you downloaded the file and change the permission of the executable.</p>
+<p>[bash]chmod +x jdk-1_5_0_22-linux-i586.bin [/bash]</p>
+<p>3) Run the self extracting binary file</p>
+<p>[bash] ./jdk-1_5_0_22-linux-i586.bin [/bash]</p>
+<p>This will create a directory named  jdk1.5.0_22 in the current working directory.</p>
+<p>4) Move this directory to /usr/java/ by</p>
+<p>[bash] sudo mv jdk1.5.0_22 /usr/java/jdk1.5.0_22  [/bash]</p>
+<p>5) Set up the environmental variables JAVA_HOME and PATH.</p>
+<p>Open files  ~/.bashrc or ~/.bash_profile files present in your home directory and append the following lines at the end. This makes the bash terminal to use JDK 1.5</p>
+<p>[bash]<br />
+JAVA_HOME=&quot;/usr/java/jdk1.5.0_22&quot;<br />
+export JAVA_HOME<br />
+export PATH=$JAVA_HOME/bin:$PATH<br />
+[/bash]</p>
+<p>6) Close the terminal and open it again and run the following command to check the java version</p>
+<p>[bash]javac -version<br />
+java -version[/bash]</p>
+<p><em>Please Drop in your comments.</em></p>
+<p><strong> </strong></p>

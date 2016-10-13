@@ -1,0 +1,54 @@
+---
+layout: post
+title: 'Oracle: Read whole file into a string using utl_file in PL/SQL'
+date: 2010-06-17 10:15:37.000000000 +05:30
+type: post
+published: true
+status: publish
+categories:
+- Oracle
+- Programming
+tags:
+- file handling
+- oracle
+- pl/sql
+- utl_file
+meta:
+  _edit_last: '1'
+  _syntaxhighlighter_encoded: '1'
+  dsq_thread_id: '478108340'
+  dsq_needs_sync: '1'
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+---
+<pre>    Here is a simple code for reading the entire contents of a file into a string in PL/SQL using utl_file package.
+It iterates through the file, concatenating each line at a time using get_line function.
+[sql light="false"]
+declare
+  f_in utl_file.file_type;
+  s_in varchar2(10000);
+  string varchar2(32000);
+
+begin
+ f_in := utl_file.fopen('SAMPLEDIR','input.txt','R');
+
+   loop
+      begin
+        utl_file.get_line(f_in,s_in);
+        EXCEPTION
+          WHEN NO_DATA_FOUND THEN
+        EXIT;
+
+        string:= string || s_in;
+
+      end;
+   end loop;
+ utl_file.fclose(f_in);
+end;
+[/sql]
+
+ In the above code SAMPLEDIR is a logical entry in the database pointing to a directory which needs to be created before performing any file handling procedures. The following link lets you get started with file handling in PL/SQL in case if you are new to it. <a href="http://www.devshed.com/c/a/Oracle/Reading-Text-Files-using-Oracle-PLSQL-and-UTLFILE/1/" target="_blank">http://www.devshed.com/c/a/Oracle/Reading-Text-Files-using-Oracle-PLSQL-and-UTLFILE/1/</a></pre>

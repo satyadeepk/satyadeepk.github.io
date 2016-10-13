@@ -1,0 +1,82 @@
+---
+layout: nav_menu_item
+title: Dropbox Folder Sync
+date: 2011-11-19 06:25:02.000000000 +05:30
+type: nav_menu_item
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _menu_item_type: post_type
+  _menu_item_menu_item_parent: '0'
+  _menu_item_object_id: '488'
+  _menu_item_object: page
+  _menu_item_target: ''
+  _menu_item_classes: a:1:{i:0;s:0:"";}
+  _menu_item_xfn: ''
+  _menu_item_url: ''
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+excerpt: Sync any folder to Dropbox with a right click
+---
+<p>Sync (and UnSync) any folder to Dropbox with just a right click!<br />
+Authors: Satyadeep and Sowrabh</p>
+<p>Download Setup File (For Windows): Version 2.5</p>
+<p>Forum Thread Click here</p>
+<p>Contents</p>
+<p>	1 Description</p>
+<p>	1.1 SYNC<br />
+	1.2 UNSYNC (De-syncs the folder from dropbox)</p>
+<p>	2 Minimum System Requirments:<br />
+	3 Usage:<br />
+	4 Screenshots<br />
+	5 Features in detail</p>
+<p>	5.1 Sync<br />
+	5.2 Unsync<br />
+	5.3 Change Dropbox Path</p>
+<p>	6 Version Log</p>
+<p>Description</p>
+<p>    SYNC</p>
+<p>	Lets you sync any folder outside dropbox with just a Right-click and Selecting “Sync With Dropbox”. So simple :) .<br />
+	Moves the original folder to dropbox and creates a symbolic link for the folder using the junction utility(installs automatically with the setup) from Sysinternals. Thus you can access the same folder from two locations.</p>
+<p>    UNSYNC (De-syncs the folder from dropbox)</p>
+<p>	Right click a symbolic link folder and select “Unsync with Dropbox”.<br />
+	Deletes the symbolic link and restores the folder back to its original location.</p>
+<p>Minimum System Requirments:</p>
+<p>	An NTFS partition with Dropbox installed in that partition, works with Windows XP™ (Service Pack 3) and above.</p>
+<p>Microsoft .NET framework 4.0 (Online installer or Standalone installer)</p>
+<p>Usage:</p>
+<p>	Run the Installer<br />
+	Right click any folder and click “Sync with Dropbox”.<br />
+	The first time you run the application it automatically sets the Dropbox Folder (Or whenever the current dropbox folder setting is corrupt)<br />
+If this detection fails prompts you to enter the Dropbox path through interface.<br />
+	For changing the Dropbox folder setting, go to Start Menu -> Programs -> Dropbox Folder Sync.<br />
+	Unsync it, if you don’t need it anymore in Dropbox, by again right-clicking (at original path) and selecting “Unsync with Dropbox”.</p>
+<p>Screenshots</p>
+<p>Features in detail</p>
+<p>Sync</p>
+<p>	Creates a symbolic link to the source folder (the folder on which you right-click) at the same place and moves the source folder to the Dropbox.<br />
+	Symbolic links are created using the junction utility (installs automatically with the setup) from Sysinternals.<br />
+	If a folder with the same name already exists in your dropbox, then it asks if it should merge & overwrite.<br />
+	If you wish not to merge, it moves the folder to dropbox with a modified name.<br />
+	While syncin’, please ensure that no file in the folder is locked by any process.</p>
+<p>Unsync</p>
+<p>	Deletes the symbolic link.<br />
+	Moves back the corresponding dropbox folder to its original location.<br />
+	The target might be in Dropbox, or in any folder inside Dropbox.</p>
+<p>Change Dropbox Path</p>
+<p>	DFS automatically detects the dropbox path at the first usage and whenever the Dropbox path setting is corrupt (for eg. Some path which is not a folder).<br />
+	If you feel the folder is not the dropbox folder or if you wish to sync the folder with some other folder which is inside Dropbox, Use the “Change” button on the GUI to change this setting.</p>
+<p>Version Log<br />
+2.5 (Latest) - Lots of improvements and fixes – See Documentation</p>
+<p>2.0 – New Feature: Unsync – for unsyncing symlinks pointing into dropbox.</p>
+<p>	Enhancement: The “copy and remove directory” procedure used previously is replaced with windows api call. – New Feature: Log file of all the actions performed(Syncing, changing settings etc.)</p>
+<p>1.2.1 - The interface got better with added icons.</p>
+<p>1.2 - New Feature: Right click any folder on the computer and click “Sync with Dropbox.</p>
+<p>1.1 - New Feature: “Overwrite folder” added if the folder already exists in Dropbox.</p>
+<p>1.0 - Dropbox Folder Sync Released</p>

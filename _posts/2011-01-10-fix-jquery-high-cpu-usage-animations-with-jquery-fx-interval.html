@@ -1,0 +1,41 @@
+---
+layout: post
+title: Fix Jquery high CPU usage animations with jQuery.fx.interval
+date: 2011-01-10 22:46:14.000000000 +05:30
+type: post
+published: true
+status: publish
+categories:
+- Programming
+- Tech Bytes
+tags:
+- javascript
+- jquery
+meta:
+  _edit_last: '1'
+  _syntaxhighlighter_encoded: '1'
+  aktt_notify_twitter: 'yes'
+  dsq_thread_id: '477801246'
+  dsq_needs_sync: '1'
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+---
+<p>Recently I am on a task of optimising a website having quite a number of Jquery plugins. The CPU usage of the browser after the page has loaded tremendously shoots up to 100% predominantly on a slower browser like Firefox. By decreasing the number of frames per second at which the browser is repainted by the animation, we can reduce the CPU cycles, of course at the cost of the quality of smoothness.</p>
+<p>jQuery.fx.interval is the parameter for specifying the delay( in milliseconds ) at which the animations fire. Its default value is 13 which means that the frames are refreshed every 13 milliseconds. Hence, lower value gives smoother animations but the CPU gets busier. A value of 50-70 would be decent for normal animations and decreases the burden on the CPU correspondingly.</p>
+<p><strong>Example:</strong></p>
+<p>[js light="false" highlight="2"]<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+      jQuery.fx.interval = 100;<br />
+       $(document).ready(function(){<br />
+             $(&quot;input&quot;).click(function(){<br />
+             $(&quot;div&quot;).toggle( 3000 );<br />
+             });<br />
+       });<br />
+ &lt;/script&gt;<br />
+[/js]</p>
+<p><strong>jQuery.fx.interval</strong> works with <strong>Jquery version 1.4.3 </strong>or higher.</p>
+<p><strong>Demo</strong>: <a title="Demo" href="http://satyadeepk.in/files/blog/jquery_fx_interval_demo.html" target="_blank">Click here</a></p>

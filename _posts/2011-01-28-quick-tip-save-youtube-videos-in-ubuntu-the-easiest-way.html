@@ -1,0 +1,41 @@
+---
+layout: post
+title: 'Quick Tip: Save youtube videos in Ubuntu - the easiest way'
+date: 2011-01-28 23:28:28.000000000 +05:30
+type: post
+published: true
+status: publish
+categories:
+- Tech Bytes
+- Ubuntu
+tags:
+- GNU/Linux
+- google
+- QuickTip
+- stuff
+- Ubuntu
+- youtube
+meta:
+  aktt_notify_twitter: 'yes'
+  _edit_last: '1'
+  dsq_thread_id: '477781328'
+  _thumbnail_id: '649'
+  image: ''
+  seo_follow: 'false'
+  seo_noindex: 'false'
+  dsq_needs_sync: '1'
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+---
+<p><img class="alignright" title="youtube" src="{{ site.baseurl }}/assets/youtube.png" alt="" width="116" height="48" />Sometimes, we would like to save Youtube videos to our computer for watching them later. There are many <a title="Video Download helper" href="https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/" target="_blank">download managers </a>and helpers to do this on different platforms. But if you are using Firefox on Ubuntu, there is a simpler way without any hassles of using plugins.</p>
+<ul>
+<li>Open the video on the youtube page normally and allow it to buffer completely.</li>
+<li>Open the directory <strong>/tmp</strong> in which the flash video is actually cached. You will notice a file something like say "<strong>FlashXXQ4xGrX</strong>".</li>
+<li>After the video is completely buffered, copy the file from <strong>/tmp</strong> to your directory and rename it like <strong>something.flv</strong></li>
+<li>That's it and you are done.</li>
+</ul>
+<p>Many a times, the Mozilla Firefox cache is not stored in <strong>/tmp</strong> but in the folder like <em>/home/user/.mozilla/firefox/<strong>your_profile</strong>/Cache. </em>This is a hidden folder and use<strong> Ctrl+H</strong> to make it visible in the File manager. A lot of files are stored in the Cache folder and sort the files on DateModified to trace the right one.</p>

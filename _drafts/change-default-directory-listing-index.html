@@ -1,0 +1,33 @@
+---
+layout: post
+title: change default directory listing index
+date: 
+type: post
+published: false
+status: private
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+---
+<p>Place the following in httpd.conf or apache.conf in your apache installation folder.</p>
+<p>&lt;Directory /var/www/&gt;</p>
+<p># enable ssi directives<br />
+Options +Includes</p>
+<p>AddType text/html .shtml<br />
+AddOutputFilter INCLUDES .shtml</p>
+<p>#  avoid duplicated &lt;html&gt;&lt;body&gt; and no column sorting</p>
+<p># place folders first<br />
+# IndexOptions FoldersFirst</p>
+<p># define absolute path to the header file from server home<br />
+HeaderName /header.html</p>
+<p>ReadmeName /readme.html</p>
+<p>&lt;/Directory&gt;</p>
+<p>then restart apache.</p>
+<p><strong>Ref:</strong> <a href="http://www.redips.net/apache/styling-directory-listings/ " target="_blank">http://www.redips.net/apache/styling-directory-listings/</a></p>

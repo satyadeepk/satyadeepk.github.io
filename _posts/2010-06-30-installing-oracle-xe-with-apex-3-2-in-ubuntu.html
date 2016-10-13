@@ -1,0 +1,79 @@
+---
+layout: post
+title: Installing Oracle XE with APEX 3.2 in Ubuntu
+date: 2010-06-30 20:04:53.000000000 +05:30
+type: post
+published: true
+status: publish
+categories:
+- Oracle
+- Programming
+- Ubuntu
+tags:
+- apex
+- apex 3.2
+- apex 4.0
+- GNU/Linux
+- oracle
+- Ubuntu
+- xe
+meta:
+  _syntaxhighlighter_encoded: '1'
+  _edit_last: '1'
+  dsq_thread_id: '477786154'
+  dsq_needs_sync: '1'
+author:
+  login: satyadeep
+  email: satyadeep.1991@gmail.com
+  display_name: Satyadeep
+  first_name: Satyadeep
+  last_name: K
+---
+<p>Installing Application Express with Oracle 10g Express Edition on Ubuntu is as easy as installing on Windows.</p>
+<p>I have comprehended the steps to install Oracle Express Edition along with APEX 3.2 in Ubuntu.</p>
+<p><strong>UPDATE: </strong>The same procedure works for upgrading to APEX 4.0 from APEX 3.2 or directly installing 4.0 over Oracle XE as well. :)</p>
+<p>1) Download Oracle XE universal .deb file from oracle.com</p>
+<p>Download apex_3.2.zip from oracle.com</p>
+<p>2)  Double click the .deb file and install the package.</p>
+<p>then in Terminal window type:<br />
+Type:</p>
+<p>[bash] sudo /etc/init.d/oracle-xe configure [/bash]</p>
+<p>Follow the instructions given there to complete the installation of Oracle 10g.</p>
+<p>3) Setting the Oracle Path:<br />
+Edit your .bashrc file to include the lines:</p>
+<p>[bash]ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server<br />
+PATH=$PATH:$ORACLE_HOME/bin<br />
+export ORACLE_HOME<br />
+export ORACLE_SID=XE</p>
+<p>export PATH[/bash]</p>
+<p>4) UPGRADING TO APEX 3.2<br />
+Place apex_3.2.zip in folder /tmp.<br />
+In terminal:</p>
+<p>[bash]cd /tmp<br />
+unzip apex_3.2.zip<br />
+cd /tmp/apex<br />
+sqlplus /nolog [/bash]</p>
+<p>Type:</p>
+<p>[sql]connect sys as sysdba[/sql]</p>
+<p>Note: Prompt for password of database admin login<br />
+Type:</p>
+<p>[sql] @apexins SYSAUX SYSAUX TEMP /i/ [/sql]</p>
+<p>This will take several minutes for installation.</p>
+<p>5) Setting the Images folder<br />
+In terminal Type inside /tmp/apex directory:</p>
+<p>[bash]sqlplus /nolog[/bash]</p>
+<p>In sqlplus:</p>
+<p>[sql]connect sys as sysdba<br />
+@apxldimg.sql /tmp[/sql]</p>
+<p>6) Enable remote http connections:</p>
+<p>SQL&gt;</p>
+<p>[sql] exec dbms_xdb.setListenerLocalAccess (l_access =&amp;gt; FALSE);[/sql]</p>
+<p>Login</p>
+<p>URL: <a href="http://127.0.0.1:8080/apex ">http://127.0.0.1:8080/apex </a></p>
+<p>Workspace: Internal</p>
+<p>Username: Admin</p>
+<p>Password: password</p>
+<p><strong>Source:</strong></p>
+<p><a href="http://ubuntuforums.org/showthread.php?t=899926">http://ubuntuforums.org/showthread.php?t=899926</a></p>
+<p><a href="https://help.ubuntu.com/community/Oracle10g">https://help.ubuntu.com/community/Oracle10g</a></p>
+<p>and Apex Documentation</p>

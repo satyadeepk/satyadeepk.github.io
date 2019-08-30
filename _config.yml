@@ -7,3 +7,5 @@ description: My passions, Tech and Photography
 paginate: 5
 permalink: /:year/:month/:title/
 include: ["_pages"]
+
+theme: jekyll-theme-slate
